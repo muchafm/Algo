@@ -4,16 +4,15 @@ $n = [1, 99, 101, 202];
 $m = [1, 2, 999];
 
 function getUnion($n, $m) {
+    $union = [];
     foreach($n as $valuesOfN) {
-        foreach($m as $valuesOfM) {
-            if($valuesOfM == $valuesOfN) {
-                $var = $valuesOfM;
-                $res = $var + $var;  
-            }
-        }
+        $union[] = $valuesOfN;
     }
-    return $res;
+    foreach($m as $valuesOfM) {
+        $union[] = $valuesOfM;
+    }
+    return $union;
 }
 
 $res = getUnion($n, $m);
-echo $res;
+print_r($res);
