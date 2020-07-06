@@ -11,8 +11,28 @@ function getUnion($n, $m) {
     foreach($m as $valuesOfM) {
         $union[] = $valuesOfM;
     }
+
+    return $union;
+
+}
+
+function orderUnion($union) {
+    $size = count($union);
+    for($i = 0; $i < $size; $i++) {
+        $nbToMove = $union[$i];
+        for($j = 0; $j < $i; $j++) {
+            $currentNb = $union[$j];
+            if($nbToMove < $currentNb) {
+                $union[$j] = $nbToMove;
+                $nbToMove = $currentNb;
+            }
+        }
+        $union[$i] = $nbToMove;
+    }
+
     return $union;
 }
 
 $res = getUnion($n, $m);
-print_r($res);
+$union = orderUnion($res);
+print_r($union);
