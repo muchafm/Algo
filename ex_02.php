@@ -7,11 +7,13 @@ function getUnion($n, $m) {
     $union = [];
     foreach($n as $valuesOfN) {
         $union[] = $valuesOfN;
+        foreach($m as $valuesOfM) {
+            if(!in_array($valuesOfM, $union)) {
+                $union[] = $valuesOfM;
+            }
+        }
     }
-    foreach($m as $valuesOfM) {
-        $union[] = $valuesOfM;
-    }
-
+    
     return $union;
 
 }
@@ -29,7 +31,6 @@ function orderUnion($union) {
         }
         $union[$i] = $nbToMove;
     }
-
     return $union;
 }
 
