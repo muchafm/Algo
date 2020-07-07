@@ -1,31 +1,30 @@
 <?php
 
-$n = [1, 2, 5, 4];
-$m = [3, 5, 2];
+$n = [1,2,5,4];
+$m = [4,5,2,6,7];
 
 function getDifference(array $n, array $m) {
     $sizeArrayN = count($n);
-    $sizeArrayM = count($m);
-    $difference = [];
-    $same = [];
+    
     if($sizeArrayN > 0) {
-        for($i = 0; $i < $sizeArrayN; $i++) {
-            foreach($n as $Nvalues) {
-                foreach($m as $Mvalues) {
-                    if($Nvalues !== $Mvalues) {
-                        var_dump($Nvalues);
-                        $difference[] = $Nvalues;
-                        return $difference;
-                    } else {
-                        $same[] = $Nvalues;
+        $union = [];
+        $difference = [];
+        foreach($n as $nVal) {
+            $union[] = $nVal;
+            foreach($m as $mVal) {
+                if(!in_array($mVal, $union)) {
+                    $union[] = $mVal;
+                    foreach($union as $values) {
+                        if($values == $nVal) {
+                            $difference[] = $nVal;
+                        }
                     }
                 }
             }
         }
+
+        return $difference;
     }
-
-    // return $difference;
-
 }
 
 $res = getDifference($n, $m);
