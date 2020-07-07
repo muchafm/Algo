@@ -3,13 +3,13 @@
 $n = [1, 99, 101, 202];
 $m = [1, 2, 999];
 
-function getUnion($n, $m) {
+function getUnion(array $n, array $m) {
     $union = [];
-    foreach($n as $valuesOfN) {
-        $union[] = $valuesOfN;
-        foreach($m as $valuesOfM) {
-            if(!in_array($valuesOfM, $union)) {
-                $union[] = $valuesOfM;
+    foreach($n as $Nvalues) {
+        $union[] = $Nvalues;
+        foreach($m as $Mvalues) {
+            if(!in_array($Mvalues, $union)) {
+                $union[] = $Mvalues;
             }
         }
     }
@@ -18,8 +18,9 @@ function getUnion($n, $m) {
 
 }
 
-function orderUnion($union) {
+function orderUnion(array $union) {
     $size = count($union);
+
     for($i = 0; $i < $size; $i++) {
         $nbToMove = $union[$i];
         for($j = 0; $j < $i; $j++) {
@@ -29,6 +30,7 @@ function orderUnion($union) {
                 $nbToMove = $currentNb;
             }
         }
+
         $union[$i] = $nbToMove;
     }
     return $union;
