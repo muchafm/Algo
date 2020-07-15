@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @param integer $limit
+ * 
+ * @return integer the summary of 3 and 5's multiple under the $limit
+ */
 function getMultiple(int $limit): int {
     
     $sumOfMultiple = 0;
