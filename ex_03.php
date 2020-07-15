@@ -7,24 +7,19 @@
  * @return array the difference of n and m
  */
 function getDifference(array $n, array $m): array {
-    $union = [];
 
+    $difference = [];
     foreach($n as $nVal) {
-        $union[] = $nVal;
-        foreach($m as $mVal) {
-            if(!in_array($mVal, $union)) {
-                $union[] = $mVal;
-            } else if($mVal !== $nVal) {
-                $difference[] = $nVal;
-            }
+        if(!in_array($nVal, $m)) {
+            $difference[] = $nVal;
         }
     }
-    $diff = array_unique($difference);
-    return $diff;
+
+    return $difference;
 }
 
-$n = [2,6,7,8];
-$m = [2,4,5,6,9];
+$n = [2,3,4,6,7,8];
+$m = [1,3,6,7,9];
 
 $res = getDifference($n, $m);
 print_r($res);
