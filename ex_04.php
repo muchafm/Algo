@@ -1,11 +1,11 @@
 <?php
 
-$m = array(
-    array(1,2,3,4), 
-    array(2,1,2,3), 
-    array(3,2,1,2), 
-    array(4,3,2,1)
-);
+$m = [
+    [1,2,3,4],
+    [2,1,2,3],
+    [3,2,1,2],
+    [4,3,2,1],
+];
 
 function getEvenNumbers(array $matrice): int {
     $evenNumbers = 0;
@@ -19,10 +19,7 @@ function getEvenNumbers(array $matrice): int {
     }
 
     return $evenNumbers;
-
 }
-
-
 
 $matchs = getEvenNumbers($m);
 echo $matchs;
