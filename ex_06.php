@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @param integer $x 
+ * 
+ * @return array the summary of the Fibonacci suite generate under 4 000 000
+ */
 function generateFibonacciSuite(int $x): array {
     $y = 1;
     $j = $x + $y;
@@ -20,6 +25,11 @@ function generateFibonacciSuite(int $x): array {
     return $sum;
 }
 
+/**
+ * @param array $sum set of integer
+ * 
+ * @return integer the summary of the even numbers in the array sum
+ */
 function getEvenNumbers(array $sum): int {
 
     $sumEvenNumbers = 0;

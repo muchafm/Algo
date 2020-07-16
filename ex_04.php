@@ -3,7 +3,7 @@
 /**
  * @param array $matrice a set of array
  * 
- * @return int the even numbers in matrice
+ * @return integer the even numbers in matrice
  */
 function getEvenNumbers(array $matrice): int {
     $evenNumbers = 0;
