@@ -41,6 +41,7 @@ function getEvenNumbers(array $sum): int {
 
     return $sumEvenNumbers;
 }
+
 $x = 0;
 $sum = generateFibonacciSuite($x);
 echo getEvenNumbers($sum);
