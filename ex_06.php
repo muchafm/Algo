@@ -1,28 +1,28 @@
 <?php
 
 /**
- * @param integer $x 
+ * @param integer $limit
  * 
- * @return array the summary of the Fibonacci suite generate under 4 000 000
+ * @return array the summary of the Fibonacci suite generate under the limit
  */
-function generateFibonacciSuite(int $x): array {
+function generateFibonacciSuite(int $limit): array {
     $y = 1;
+    $x = 0;
     $j = $x + $y;
     $x = $y;
     $y = $j;
     
-    $limit = 4000000;
     while($x <= $limit) {
         $j = $x + $y;
         $x = $y;
         $y = $j;
 
         if($x <= 4000000) {
-            $sum[] = $x;
+            $suit[] = $x;
         }
     }
 
-    return $sum;
+    return $suit;
 }
 
 /**
@@ -30,9 +30,9 @@ function generateFibonacciSuite(int $x): array {
  * 
  * @return integer the summary of the even numbers in the array sum
  */
-function getEvenNumbers(array $sum): int {
-
+function getEvenTermsSum(array $sum): int {
     $sumEvenNumbers = 0;
+
     foreach($sum as $sumValues) {
         if($sumValues % 2 == 0) {
             $sumEvenNumbers += $sumValues;
@@ -42,6 +42,6 @@ function getEvenNumbers(array $sum): int {
     return $sumEvenNumbers;
 }
 
-$x = 0;
-$sum = generateFibonacciSuite($x);
-echo getEvenNumbers($sum);
+$limit = 4000000;
+$suit = generateFibonacciSuite($limit);
+echo getEvenTermsSum($suit);
