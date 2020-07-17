@@ -3,7 +3,7 @@
 /**
  * @param integer $limit
  * 
- * @return array the summary of the Fibonacci suite generate under the limit
+ * @return array the set of integer of the Fibonacci suite generate under the limit
  */
 function generateFibonacciSuite(int $limit): array {
     $y = 1;
