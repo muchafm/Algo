@@ -18,11 +18,11 @@ function generateFibonacciSuite(int $limit): array {
         $y = $j;
 
         if($x <= 4000000) {
-            $suit[] = $x;
+            $suite[] = $x;
         }
     }
 
-    return $suit;
+    return $suite;
 }
 
 /**
@@ -43,5 +43,5 @@ function getEvenTermsSum(array $sum): int {
 }
 
 $limit = 4000000;
-$suit = generateFibonacciSuite($limit);
-echo getEvenTermsSum($suit);
+$suite = generateFibonacciSuite($limit);
+echo getEvenTermsSum($suite);
